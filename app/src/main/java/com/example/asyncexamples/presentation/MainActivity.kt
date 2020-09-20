@@ -1,7 +1,8 @@
-package com.example.asyncexamples
+package com.example.asyncexamples.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.asyncexamples.R
 
 class MainActivity : AppCompatActivity() {
 
