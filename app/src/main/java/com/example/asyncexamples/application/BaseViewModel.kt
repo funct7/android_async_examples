@@ -2,36 +2,37 @@ package com.example.asyncexamples.application
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
-abstract class ViewModel {
+abstract class BaseViewModel : ViewModel() {
 
     val isSignInButtonVisible: LiveData<Boolean>
         get() = mIsSignInButtonVisible
-    private val mIsSignInButtonVisible = MutableLiveData<Boolean>().apply { value = true }
+    protected val mIsSignInButtonVisible = MutableLiveData<Boolean>().apply { value = true }
 
     val isUserViewVisible: LiveData<Boolean>
         get() = mIsUserViewVisible
-    private val mIsUserViewVisible = MutableLiveData<Boolean>().apply { value = false }
+    protected val mIsUserViewVisible = MutableLiveData<Boolean>().apply { value = false }
 
     val user: LiveData<User?>
         get() = mUser
-    private val mUser = MutableLiveData<User?>().apply { value = null }
+    protected val mUser = MutableLiveData<User?>().apply { value = null }
 
     val feed: LiveData<List<Post>>
         get() = mFeed
-    private val mFeed = MutableLiveData<List<Post>>().apply { value = listOf() }
+    protected val mFeed = MutableLiveData<List<Post>>().apply { value = listOf() }
 
     val signInMessage: LiveData<String?>
         get() = mSignInMessage
-    private val mSignInMessage = MutableLiveData<String?>().apply { value = null }
+    protected val mSignInMessage = MutableLiveData<String?>().apply { value = null }
 
     val alertMessage: LiveData<String?>
         get() = mAlertMessage
-    private val mAlertMessage = MutableLiveData<String?>().apply { value = null }
+    protected val mAlertMessage = MutableLiveData<String?>().apply { value = null }
 
     val isLoading: LiveData<Boolean>
         get() = mIsLoading
-    private val mIsLoading = MutableLiveData<Boolean>().apply { value = false }
+    protected val mIsLoading = MutableLiveData<Boolean>().apply { value = false }
 
     abstract fun tapButton()
     abstract fun signIn()
@@ -43,11 +44,11 @@ abstract class ViewModel {
             mIsLoading.value = loadingCount > 0
         }
 
-    fun incrementLoading() {
+    protected fun incrementLoading() {
         loadingCount++
     }
 
-    fun decrementLoading() {
+    protected fun decrementLoading() {
         loadingCount--
     }
 
