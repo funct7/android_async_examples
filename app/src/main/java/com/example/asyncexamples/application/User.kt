@@ -8,6 +8,6 @@ data class User(
     /**
      * Initial value 는 빈 string.
      */
-    val username: LiveData<String>,
-    val userImage: LiveData<Bitmap?>
+    val username: String,
+    val userImage: Bitmap?
 )

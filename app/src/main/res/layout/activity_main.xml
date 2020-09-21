@@ -90,6 +90,7 @@
                 android:text="@string/expected_result" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/toggle_response"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
