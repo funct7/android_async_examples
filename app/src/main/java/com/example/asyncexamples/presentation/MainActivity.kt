@@ -3,13 +3,20 @@ package com.example.asyncexamples.presentation
 import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.example.asyncexamples.R
 import com.example.asyncexamples.application.BaseViewModel
 import com.example.asyncexamples.application.CallbackViewModel
+import com.example.asyncexamples.application.Post
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +38,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUp() {
         viewModel = ViewModelProvider(this).get(CallbackViewModel::class.java)
+
+        list_feed.layoutManager = LinearLayoutManager(this).apply {
+            orientation = RecyclerView.VERTICAL
+        }
+        list_feed.adapter = FeedAdapter()
 
         btn_sign_in.setOnClickListener { viewModel.tapButton() }
         btn_sign_out.setOnClickListener { viewModel.signOut() }
