@@ -3,7 +3,7 @@ package com.example.asyncexamples.domain.entity
 import android.net.Uri
 
 interface UserModel {
-    var id: String
-    var username: String
+    val id: String
+    val username: String
     var pictureUrl: Uri
 }
