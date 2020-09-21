@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">AsyncExamples</string>
 
-    <string name="button.sign_in">로그인 하기</string>
-    <string name="button.sign_out">로그아웃</string>
+    <string name="button$sign_in">로그인 하기</string>
+    <string name="button$sign_out">로그아웃</string>
 
     <string name="expected_result">요청 결과: </string>
     <string name="success">성공</string>
     <string name="failure">실패</string>
 
-    <string name="alert.confirm_sign_in">로그인 하시겠습니까?</string>
-    <string name="alert.button.confirm">확인</string>
-    <string name="alert.button.cancel">취소</string>
+    <string name="alert$confirm_sign_in">로그인 하시겠습니까?</string>
+    <string name="alert$button$confirm">확인</string>
+    <string name="alert$button$cancel">취소</string>
 
-    <string name="desc.user_image">사용자 프로필 이미지</string>
+    <string name="desc$user_image">사용자 프로필 이미지</string>
 </resources>

@@ -16,7 +16,7 @@
             android:id="@+id/btn_sign_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/button.sign_in"
+            android:text="@string/button$sign_in"
             app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent"
@@ -37,7 +37,7 @@
                 android:id="@+id/iv_user"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:contentDescription="@string/desc.user_image"
+                android:contentDescription="@string/desc$user_image"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -57,7 +57,7 @@
                 android:id="@+id/btn_sign_out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button.sign_out"
+                android:text="@string/button$sign_out"
                 app:layout_constraintBottom_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="parent" />

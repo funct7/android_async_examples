@@ -1,20 +1,16 @@
 package com.example.asyncexamples.presentation
 
 import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStore
-import androidx.lifecycle.ViewModelStoreOwner
 import androidx.lifecycle.observe
 import com.example.asyncexamples.R
 import com.example.asyncexamples.application.BaseViewModel
 import com.example.asyncexamples.application.CallbackViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.security.auth.callback.Callback
 
 class MainActivity : AppCompatActivity() {
 
@@ -65,16 +61,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun displaySignInDialog() {
         AlertDialog.Builder(this)
-            .setMessage(R.string.alert_confirm_sign_in)
-            .setPositiveButton(R.string.alert_button_confirm) { _, _ -> viewModel.signIn() }
-            .setNegativeButton(R.string.alert_button_cancel, null)
+            .setMessage(R.string.`alert$confirm_sign_in`)
+            .setPositiveButton(R.string.`alert$button$confirm`) { _, _ -> viewModel.signIn() }
+            .setNegativeButton(R.string.`alert$button$cancel`, null)
             .show()
     }
 
     private fun displayAlert(message: String) {
         AlertDialog.Builder(this)
             .setMessage(message)
-            .setNeutralButton(R.string.alert_button_confirm, null)
+            .setNeutralButton(R.string.`alert$button$confirm`, null)
             .show()
     }
 
