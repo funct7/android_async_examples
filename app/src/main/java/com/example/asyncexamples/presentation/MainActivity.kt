@@ -73,16 +73,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun displaySignInDialog() {
         AlertDialog.Builder(this)
-            .setMessage(R.string.`alert$confirm_sign_in`)
-            .setPositiveButton(R.string.`alert$button$confirm`) { _, _ -> viewModel.signIn() }
-            .setNegativeButton(R.string.`alert$button$cancel`, null)
+            .setMessage(R.string.alert_confirm_sign_in)
+            .setPositiveButton(R.string.alert_button_confirm) { _, _ -> viewModel.signIn() }
+            .setNegativeButton(R.string.alert_button_confirm, null)
             .show()
     }
 
     private fun displayAlert(message: String) {
         AlertDialog.Builder(this)
             .setMessage(message)
-            .setNeutralButton(R.string.`alert$button$confirm`, null)
+            .setNeutralButton(R.string.alert_button_confirm, null)
             .show()
     }
 
