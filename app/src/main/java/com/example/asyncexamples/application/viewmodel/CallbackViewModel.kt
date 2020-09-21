@@ -1,4 +1,4 @@
-package com.example.asyncexamples.application
+package com.example.asyncexamples.application.viewmodel
 
 class CallbackViewModel : BaseViewModel() {
 

@@ -1,8 +1,10 @@
-package com.example.asyncexamples.application
+package com.example.asyncexamples.application.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.asyncexamples.application.Post
+import com.example.asyncexamples.application.User
 
 abstract class BaseViewModel : ViewModel() {
 
