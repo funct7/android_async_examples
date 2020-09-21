@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="64dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:id="@+id/iv_post_user"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/desc.user_image"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="56dp" />
+
+        <TextView
+            android:id="@+id/tv_post_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Username" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide"
+            app:layout_constraintTop_toBottomOf="@id/tv_post_username"
+            tools:text="Content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
