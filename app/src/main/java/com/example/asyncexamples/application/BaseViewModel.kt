@@ -22,9 +22,9 @@ abstract class BaseViewModel : ViewModel() {
         get() = mFeed
     protected val mFeed = MutableLiveData<List<Post>>().apply { value = listOf() }
 
-    val signInMessage: LiveData<String?>
-        get() = mSignInMessage
-    protected val mSignInMessage = MutableLiveData<String?>().apply { value = null }
+    val confirmSignIn: LiveData<Boolean>
+        get() = mConfirmSignIn
+    protected val mConfirmSignIn = MutableLiveData<Boolean>().apply { value = false }
 
     val alertMessage: LiveData<String?>
         get() = mAlertMessage
@@ -34,7 +34,11 @@ abstract class BaseViewModel : ViewModel() {
         get() = mIsLoading
     protected val mIsLoading = MutableLiveData<Boolean>().apply { value = false }
 
-    abstract fun tapButton()
+    fun tapButton() {
+        mConfirmSignIn.value = true
+        mConfirmSignIn.postValue(false)
+    }
+
     abstract fun signIn()
     abstract fun signOut()
 
