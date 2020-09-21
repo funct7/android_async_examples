@@ -1,4 +1,6 @@
-package com.example.asyncexamples.domain
+package com.example.asyncexamples.domain.repository
+
+import com.example.asyncexamples.domain.entity.UserModel
 
 interface UserRepository {
 

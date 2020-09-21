@@ -1,6 +1,12 @@
 package com.example.asyncexamples.application.viewmodel
 
-class CallbackViewModel : BaseViewModel() {
+import com.example.asyncexamples.application.repository.UserRepositoryImpl
+import com.example.asyncexamples.domain.repository.UserRepository
+
+// TODO: Use Dagger
+class CallbackViewModel(
+    private val userRepository: UserRepository = UserRepositoryImpl()
+) : BaseViewModel() {
 
     override
     fun signIn() {

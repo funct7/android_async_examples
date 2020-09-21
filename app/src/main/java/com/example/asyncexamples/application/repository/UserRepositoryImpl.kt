@@ -1,7 +1,7 @@
 package com.example.asyncexamples.application.repository
 
-import com.example.asyncexamples.domain.UserModel
-import com.example.asyncexamples.domain.UserRepository
+import com.example.asyncexamples.domain.entity.UserModel
+import com.example.asyncexamples.domain.repository.UserRepository
 
 class UserRepositoryImpl : BaseRepository(), UserRepository {
 

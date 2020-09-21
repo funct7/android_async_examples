@@ -1,4 +1,4 @@
-package com.example.asyncexamples.domain
+package com.example.asyncexamples.domain.entity
 
 import android.net.Uri
 
