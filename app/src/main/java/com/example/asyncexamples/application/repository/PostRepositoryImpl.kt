@@ -3,7 +3,7 @@ package com.example.asyncexamples.application.repository
 import com.example.asyncexamples.domain.entity.PostModel
 import com.example.asyncexamples.domain.repository.PostRepository
 
-class PostRepositoryImpl : BaseRepository(), PostRepository {
+object PostRepositoryImpl : BaseRepository(), PostRepository {
 
     override
     fun fetchPost(

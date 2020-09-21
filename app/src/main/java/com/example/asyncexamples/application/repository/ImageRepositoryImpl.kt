@@ -4,7 +4,7 @@ import android.graphics.Bitmap
 import android.net.Uri
 import com.example.asyncexamples.domain.repository.ImageRepository
 
-class ImageRepositoryImpl : BaseRepository(), ImageRepository {
+object ImageRepositoryImpl : BaseRepository(), ImageRepository {
 
     override
     fun resolveImage(

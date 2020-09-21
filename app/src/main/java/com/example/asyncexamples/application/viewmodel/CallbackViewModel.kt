@@ -12,9 +12,9 @@ import com.example.asyncexamples.domain.repository.UserRepository
 
 // TODO: Use Dagger
 class CallbackViewModel(
-    private val userRepository: UserRepository = UserRepositoryImpl(),
-    private val imageRepository: ImageRepository = ImageRepositoryImpl(),
-    private val postRepository: PostRepository = PostRepositoryImpl()
+    private val userRepository: UserRepository = UserRepositoryImpl,
+    private val imageRepository: ImageRepository = ImageRepositoryImpl,
+    private val postRepository: PostRepository = PostRepositoryImpl
 ) : BaseViewModel() {
 
     override
