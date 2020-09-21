@@ -11,5 +11,5 @@ data class Post(
      */
     val username: LiveData<String>,
     val userImage: LiveData<Bitmap?>,
-    val content: LiveData<String>
+    val content: String
 )

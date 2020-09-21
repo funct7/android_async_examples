@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     // TODO: Use DI
     // TODO: Use data binding
     private lateinit var viewModel: BaseViewModel
+    private val feedAdapter by lazy { FeedAdapter(this) }
 
     private fun setUp() {
         viewModel = ViewModelProvider(this).get(CallbackViewModel::class.java)
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         list_feed.layoutManager = LinearLayoutManager(this).apply {
             orientation = RecyclerView.VERTICAL
         }
-        list_feed.adapter = FeedAdapter()
+        list_feed.adapter = feedAdapter
 
         btn_sign_in.setOnClickListener { viewModel.tapButton() }
         btn_sign_out.setOnClickListener { viewModel.signOut() }
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             view_user.isVisible = isUserViewVisible
         }
         viewModel.feed.observe(this) { feed ->
-            TODO("bind to list view")
+            feedAdapter.submitList(feed)
         }
         viewModel.alertMessage.observe(this) { alertMessage ->
             if (alertMessage.isNullOrBlank()) return@observe
