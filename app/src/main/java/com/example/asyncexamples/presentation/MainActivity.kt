@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
     // PRIVATE
 
     // TODO: Use DI
-    private val viewModel: BaseViewModel = ViewModelProvider(this)
-        .get(CallbackViewModel::class.java)
+    private val viewModel: BaseViewModel by lazy {
+        ViewModelProvider(this).get(CallbackViewModel::class.java)
+    }
 
 }
