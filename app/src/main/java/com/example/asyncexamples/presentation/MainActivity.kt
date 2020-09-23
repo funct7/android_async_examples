@@ -44,6 +44,9 @@ class MainActivity : AppCompatActivity() {
         btn_sign_out.setOnClickListener { viewModel.signOut() }
         toggle_response.setOnCheckedChangeListener { _, isChecked -> toggleResponse(isChecked) }
 
+        viewModel.isLoading.observe(this) { isLoading ->
+            view_progress.isVisible = isLoading
+        }
         viewModel.isSignInButtonVisible.observe(this) { isSignInButtonVisible ->
             btn_sign_in.isVisible = isSignInButtonVisible
         }
