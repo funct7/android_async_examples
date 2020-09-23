@@ -3,18 +3,17 @@ package com.example.asyncexamples.application.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.map
 import com.example.asyncexamples.application.Post
 import com.example.asyncexamples.application.User
 
 abstract class BaseViewModel : ViewModel() {
 
     val isSignInButtonVisible: LiveData<Boolean>
-        get() = mIsSignInButtonVisible
-    protected val mIsSignInButtonVisible = MutableLiveData<Boolean>().apply { value = true }
+        get() = mUser.map { it == null }
 
     val isUserViewVisible: LiveData<Boolean>
-        get() = mIsUserViewVisible
-    protected val mIsUserViewVisible = MutableLiveData<Boolean>().apply { value = false }
+        get() = mUser.map { it != null }
 
     val user: LiveData<User?>
         get() = mUser
@@ -26,7 +25,7 @@ abstract class BaseViewModel : ViewModel() {
 
     val confirmSignIn: LiveData<Boolean>
         get() = mConfirmSignIn
-    protected val mConfirmSignIn = MutableLiveData<Boolean>().apply { value = false }
+    private val mConfirmSignIn = MutableLiveData<Boolean>().apply { value = false }
 
     val alertMessage: LiveData<String?>
         get() = mAlertMessage
