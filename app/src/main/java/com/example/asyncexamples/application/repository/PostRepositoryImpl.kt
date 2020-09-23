@@ -11,7 +11,7 @@ object PostRepositoryImpl : BaseRepository(), PostRepository {
         onSuccess: (List<PostModel>) -> Unit,
         onFailure: (Throwable) -> Unit
     ) {
-        returnTable[javaClass.enclosingMethod!!.name].let {
+        returnTable[::fetchPost.name].let {
             when (it) {
                 is List<*> -> performAfterDelay {
                     @Suppress("UNCHECKED_CAST")

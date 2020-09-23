@@ -12,10 +12,11 @@ object ImageRepositoryImpl : BaseRepository(), ImageRepository {
         onSuccess: (Bitmap) -> Unit,
         onFailure: (Throwable) -> Unit
     ) {
-        returnTable[javaClass.enclosingMethod!!.name].let {
-            when (it) {
-                is Bitmap -> performAfterDelay { onSuccess(it) }
-                is Throwable -> performAfterDelay { onFailure(it) }
+        @Suppress("UNCHECKED_CAST")
+        (returnTable[::resolveImage.name] as Map<Uri, Any>).let {
+            when (val result = it[uri]) {
+                is Bitmap -> performAfterDelay { onSuccess(result) }
+                is Throwable -> performAfterDelay { onFailure(result) }
                 else -> error("invalid type: $it")
             }
         }
