@@ -33,7 +33,7 @@ abstract class BaseViewModel : ViewModel() {
 
     val isLoading: LiveData<Boolean>
         get() = mIsLoading
-    protected val mIsLoading = MutableLiveData<Boolean>().apply { value = false }
+    private val mIsLoading = MutableLiveData<Boolean>().apply { value = false }
 
     fun tapButton() {
         mConfirmSignIn.value = true
@@ -43,7 +43,7 @@ abstract class BaseViewModel : ViewModel() {
     abstract fun signIn()
     abstract fun signOut()
 
-    var loadingCount: Int = 0
+    private var loadingCount: Int = 0
         private set(value) {
             field = value
             mIsLoading.value = loadingCount > 0
