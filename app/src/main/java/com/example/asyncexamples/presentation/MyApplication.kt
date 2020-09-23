@@ -62,7 +62,7 @@ class MyApplication : Application() {
     }
 
     fun mockFailure() {
-        UserRepositoryImpl.returnTable[UserRepositoryImpl::signIn.name] = Throwable()
+        UserRepositoryImpl.returnTable[UserRepositoryImpl::signIn.name] = Throwable("expected")
     }
 
     // INHERITED

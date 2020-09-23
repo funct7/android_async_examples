@@ -86,9 +86,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun toggleResponse(isChecked: Boolean) {
-        toggle_response.text = if (isChecked)
-            getString(R.string.success) else
-            getString(R.string.failure)
+        if (isChecked) {
+            toggle_response.text = getString(R.string.success)
+            (application as MyApplication).mockSuccess()
+        } else {
+            toggle_response.text = getString(R.string.failure)
+            (application as MyApplication).mockFailure()
+        }
     }
 
 }
