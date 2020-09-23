@@ -105,8 +105,4 @@ class CallbackViewModel(
             })
     }
 
-    override fun signOut() {
-        TODO("Not yet implemented")
-    }
-
 }

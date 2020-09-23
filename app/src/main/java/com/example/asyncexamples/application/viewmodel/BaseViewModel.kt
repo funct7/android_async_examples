@@ -41,7 +41,11 @@ abstract class BaseViewModel : ViewModel() {
     }
 
     abstract fun signIn()
-    abstract fun signOut()
+
+    fun signOut() {
+        mUser.value = null
+        mFeed.value = listOf()
+    }
 
     private var loadingCount: Int = 0
         private set(value) {
