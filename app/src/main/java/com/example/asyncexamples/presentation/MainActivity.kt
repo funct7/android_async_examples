@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setMessage(R.string.alert_confirm_sign_in)
             .setPositiveButton(R.string.alert_button_confirm) { _, _ -> viewModel.signIn() }
-            .setNegativeButton(R.string.alert_button_confirm, null)
+            .setNegativeButton(R.string.alert_button_cancel, null)
             .show()
     }
 
