@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.asyncexamples.R
 import com.example.asyncexamples.application.viewmodel.BaseViewModel
-import com.example.asyncexamples.application.viewmodel.CallbackViewModel
+import com.example.asyncexamples.application.viewmodel.CoroutineViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     private val feedAdapter by lazy { FeedAdapter(this) }
 
     private fun setUp() {
-        viewModel = ViewModelProvider(this).get(CallbackViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(CoroutineViewModel::class.java)
 
         list_feed.layoutManager = LinearLayoutManager(this).apply {
             orientation = RecyclerView.VERTICAL

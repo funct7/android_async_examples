@@ -61,4 +61,9 @@ abstract class BaseViewModel : ViewModel() {
         loadingCount--
     }
 
+    protected fun showAlertMessage(message: String?) {
+        mAlertMessage.value = message
+        mAlertMessage.postValue(null)
+    }
+
 }
